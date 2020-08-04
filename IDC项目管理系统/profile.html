@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+    <title>个人信息</title>
+    <!-- General CSS Files -->
+    <link rel="stylesheet" href="assets/css/app.min.css">
+    <link rel="stylesheet" href="assets/bundles/bootstrap-social/bootstrap-social.css">
+    <link rel="stylesheet" href="assets/bundles/summernote/summernote-bs4.css">
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <!-- Custom style CSS -->
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel='shortcut icon' type='image/x-icon' href='assets/img/favicon.ico' />
+    <style>
+        #picture {
+            position: relative;
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        #camera {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            top: 60px;
+            left: 170px;
+            cursor: pointer;
+        }
+
+        .fa-camera {
+            line-height: 40px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loader"></div>
+    <div id="app">
+        <div class="main-wrapper main-wrapper-1">
+            <div class="navbar-bg"></div>
+            <!-- nav顶部导航 start -->
+            <nav class="navbar navbar-expand-lg main-navbar sticky">
+                <div class="form-inline mr-auto">
+                    <ul class="navbar-nav mr-3">
+                        <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg collapse-btn"> <i
+                                    data-feather="align-justify"></i></a></li>
+                        <li><a href="#" class="nav-link nav-link-lg fullscreen-btn"><i data-feather="maximize"></i></a>
+                        </li>
+                        <!-- 搜索框 start -->
+                        <li>
+                            <form class="form-inline mr-auto">
+                                <div class="search-element">
+                                    <input class="form-control" type="search" placeholder="Search" aria-label="Search"
+                                        data-width="200">
+                                    <button class="btn" type="submit">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </li>
+                        <!-- 搜索框 end -->
+                    </ul>
+                </div>
+                <ul class="navbar-nav navbar-right">
+                    <!-- 新消息 start-->
+                    <li class="dropdown dropdown-list-toggle">
+                        <a href="#" data-toggle="dropdown" class="nav-link nav-link-lg message-toggle"><i
+                                data-feather="mail"></i>
+                            <span class="badge headerBadge1">3 </span>
+                        </a>
+                        <div class="dropdown-menu dropdown-list dropdown-menu-right pullDown">
+                            <div class="dropdown-header">
+                                新消息
+                                <div class="float-right">
+                                    <a href="#">全部标为已读</a>
+                                </div>
+                            </div>
+                            <div class="dropdown-list-content dropdown-list-message">
+                                <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar
+                                        text-white"> <img alt="image" src="assets/img/users/user-1.png"
+                                            class="rounded-circle">
+                                    </span> <span class="dropdown-item-desc"> <span class="message-user">John
+                                            Deo</span>
+                                        <span class="time messege-text">Please check your mail !!</span>
+                                        <span class="time">2 分钟前</span>
+                                    </span>
+                                </a>
+                                <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
+                                        <img alt="image" src="assets/img/users/user-2.png" class="rounded-circle">
+                                    </span> <span class="dropdown-item-desc"> <span class="message-user">Sarah
+                                            Smith</span> <span class="time messege-text">Request for leave
+                                            application</span>
+                                        <span class="time">5 分钟前</span>
+                                    </span>
+                                </a>
+                                <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
+                                        <img alt="image" src="assets/img/users/user-5.png" class="rounded-circle">
+                                    </span> <span class="dropdown-item-desc"> <span class="message-user">Jacob
+                                            Ryan</span> <span class="time messege-text">Your payment invoice is
+                                            generated.</span> <span class="time">12 分钟前</span>
+                                    </span>
+                                </a>
+                            </div>
+                            <div class="dropdown-footer text-center">
+                                <a href="#">查看全部 <i class="fas fa-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- 新消息  end -->
+
+                    <!-- 新通知 start -->
+                    <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown"
+                            class="nav-link notification-toggle nav-link-lg"><i data-feather="bell" class="bell"></i>
+                            <span class="badge headerBadge2">2</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-list dropdown-menu-right pullDown">
+                            <div class="dropdown-header">
+                                新通知
+                                <div class="float-right">
+                                    <a href="#">全部标为已读</a>
+                                </div>
+                            </div>
+                            <div class="dropdown-list-content dropdown-list-icons">
+                                <a href="#" class="dropdown-item dropdown-item-unread">
+                                    <span class="dropdown-item-icon bg-primary text-white"> <i
+                                            class="fas fa-code"></i></span>
+                                    <span class="dropdown-item-desc"> Template update isavailable now! <span
+                                            class="time">2 分钟前</span></span>
+                                </a>
+                                <a href="#" class="dropdown-item">
+                                    <span class="dropdown-item-icon bg-info text-white"> <i
+                                            class="far fa-user"></i></span>
+                                    <span class="dropdown-item-desc"> <b>You</b> and <b>Dedik Sugiharto</b> are now
+                                        friends <span class="time">10 分钟前</span></span>
+                                </a>
+                            </div>
+                            <div class="dropdown-footer text-center">
+                                <a href="#">查看全部<i class="fas fa-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- 新通知 end -->
+                    <!-- 个人信息 start -->
+                    <li class="dropdown"><a href="#" data-toggle="dropdown"
+                            class="nav-link dropdown-toggle nav-link-lg nav-link-user"> <img alt="image"
+                                src="assets/img/user.png" class="user-img-radious-style"> <span
+                                class="d-sm-none d-lg-inline-block"></span></a>
+                        <div class="dropdown-menu dropdown-menu-right pullDown">
+                            <div class="dropdown-title">您好 admin</div>
+                            <a href="profile.html" class="dropdown-item has-icon"> <i class="far fa-user"></i> 个人信息</a>
+                            <a href="" class="dropdown-item has-icon"> <i class="fas fa-cog"></i>设置</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="auth-login.html" class="dropdown-item has-icon text-danger"> <i
+                                    class="fas fa-sign-out-alt"></i>退出</a>
+                        </div>
+                    </li>
+                    <!-- 个人信息 end -->
+                </ul>
+            </nav>
+            <!-- nav end -->
+            <!-- 左侧菜单栏 start -->
+            <div class="main-sidebar sidebar-style-2">
+                <aside id="sidebar-wrapper">
+                    <div class="sidebar-brand">
+                        <a href="index.html"> <img alt="image" src="assets/img/logo.jpg" class="header-logo" /> <span
+                                class="logo-name">IDC 项目管理系统</span>
+                        </a>
+                    </div>
+                    <div class="sidebar-user">
+                        <div class="sidebar-user-picture">
+                            <img alt="image" src="assets/img/user.png">
+                        </div>
+                        <div class="sidebar-user-details">
+                            <div class="user-name">admin</div>
+                            <div class="user-role">项目经理</div>
+                        </div>
+                    </div>
+                    <ul class="sidebar-menu">
+                        <li class="menu-header">台账管理</li>
+                        <li class="dropdown">
+                            <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                                    data-feather="users"></i><span>客户管理</span></a>
+                            <ul class="dropdown-menu">
+                                <li><a class="nav-link" href="#"><i data-feather="edit"></i><span>客户等级</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                                    data-feather="file"></i><span>机房、资源管理</span></a>
+                            <ul class="dropdown-menu">
+                                <li><a class="nav-link" href="#"><i data-feather="edit"></i><span>机房信息</span></a></li>
+                                <li><a class="nav-link" href="#"><i data-feather="edit"></i><span>子机房信息</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-header">项目管理</li>
+                        <li class="dropdown">
+                            <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                                    data-feather="user-check"></i><span>我的</span></a>
+                            <ul class="dropdown-menu">
+                                <li><a class="nav-link" href="my-backlog.html"><i
+                                            data-feather="edit"></i><span>我的待办</span><span class="badge badge-danger"
+                                            style="width:22px;">0</span></a></li>
+                                <li><a class="nav-link" href="my-done.html"><i
+                                            data-feather="check-square"></i><span>我的已办</span><span
+                                            class="badge badge-primary" style="width:22px;">4</span></a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                                    data-feather="folder"></i><span>立项管理</span></a>
+                            <ul class="dropdown-menu">
+                                <li><a class="nav-link" href="project-create.html">新建项目</a></li>
+                                <li><a class="nav-link" href="project-list.html"> <i
+                                            data-feather="list"></i><span>项目列表</span> </a></li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                                    data-feather="edit-2"></i><span>设计管理</span></a>
+                            <ul class="dropdown-menu">
+                                <li><a class="nav-link" href="draft-manage.html">图纸管理</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                                    data-feather="shopping-cart"></i><span>采购管理</span></a>
+                            <ul class="dropdown-menu">
+                                <li><a class="nav-link" href="create-post.html">Create Post</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                                    data-feather="calendar"></i><span>施工管理</span></a>
+                            <ul class="dropdown-menu">
+                                <li><a class="nav-link" href="create-post.html">Create Post</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                                    data-feather="award"></i><span>验收管理</span></a>
+                            <ul class="dropdown-menu">
+                                <li><a class="nav-link" href="create-post.html">Create Post</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="menu-header">备品备件</li>
+                        <li class="dropdown">
+                            <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                                    data-feather="alert-triangle"></i><span>Errors</span></a>
+                            <ul class="dropdown-menu">
+                                <li><a class="nav-link" href="errors-404.html">404</a></li>
+                                <li><a class="nav-link" href="errors-500.html">500</a></li>
+                            </ul>
+                        </li>
+
+
+                    </ul>
+                </aside>
+            </div>
+            <!-- 左侧菜单栏 end -->
+            <!-- Main Content -->
+            <div class="main-content">
+                <section class="section">
+                    <ul class="breadcrumb breadcrumb-style ">
+                        <li class="breadcrumb-item">
+                            <h4 class="page-title m-b-0">个人信息</h4>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="index.html">
+                                <i class="fas fa-home"></i></a>
+                        </li>
+                        <li class="breadcrumb-item">个人信息</li>
+                    </ul>
+                    <div class="section-body">
+                        <div class="row mt-sm-4">
+                            <div class="col-12 col-md-12 col-lg-6" style="margin: 0 auto; ">
+                                <div class="card author-box">
+                                    <div class="card-body" style="height: 600px;">
+                                        <div class="author-box-center">
+                                            <div id="picture">
+                                                <img id="pic" alt="image" src="assets/img/user.png"
+                                                    class="rounded-circle author-box-picture">
+                                                <i class="fas fa-camera bg-indigo c-icon " id="camera"></i>
+                                                <input id="upload" name="file" accept="image/*" type="file"
+                                                    style="display: none">
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <div class="author-box-name">
+                                                <a href="#">Smith</a>
+                                            </div>
+                                            <div class="author-box-job">项目经理</div>
+                                        </div>
+                                        <hr>
+                                        <div class="text-center">
+
+                                            <div class="py-4">
+                                                <p class="clearfix">
+                                                    <span class="float-left">所在部门</span>
+                                                    <span class="float-right text-muted">网络运行维护部</span>
+                                                </p>
+                                                <p class="clearfix">
+                                                    <span class="float-left">所在科室 </span>
+                                                    <span class="float-right text-muted">IDC 网络建设室</span>
+                                                </p>
+                                                <p class="clearfix">
+                                                    <span class="float-left">岗位</span>
+                                                    <span class="float-right text-muted">项目经理</span>
+                                                </p>
+                                                <p class="clearfix">
+                                                    <span class="float-left">联系方式</span>
+                                                    <span class="float-right text-muted">186****8888</span>
+                                                </p>
+                                                <p class="clearfix">
+                                                    <span class="float-left">邮箱</span>
+                                                    <span class="float-right text-muted">test@chinaunicom.cn</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <a href="#" class="btn btn-icon icon-left btn-primary pull-right"
+                                                data-toggle="modal" data-target="#changepassModal"><i
+                                                    class="far fa-edit"></i>修改密码</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+                <!-- Modal with form -->
+                <div class="modal fade" id="changepassModal" tabindex="-1" role="dialog" aria-labelledby="formModal"
+                    aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="formModal">修改密码</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form class="">
+                                    <div class="form-group">
+                                        <label>原密码</label>
+                                        <div class="input-group">
+                                            <input type="password" class="form-control" placeholder="" name="oldpass">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>新密码</label>
+                                        <div class="input-group">
+                                            <input type="password" class="form-control" placeholder="" name="newpass">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>确认新密码</label>
+                                        <div class="input-group">
+                                            <!-- <div class="input-group-prepend">
+                                                <div class="input-group-text">
+                                                    <i class="fas fa-lock"></i>
+                                                </div>
+                                            </div> -->
+                                            <input type="password" class="form-control" placeholder="" name="pass">
+                                        </div>
+                                    </div>
+                                    <div class="buttons pull-right">
+                                        <button type="button" class="btn btn-secondary m-t-15 waves-effect"
+                                            data-dismiss="modal" aria-label="Close">取消</button>
+                                        <button type="button" class="btn btn-primary m-t-15 waves-effect">确认</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- settingSidebar start -->
+                <div class="settingSidebar">
+                    <a href="javascript:void(0)" class="settingPanelToggle"> <i class="fa fa-spin fa-cog"></i>
+                    </a>
+                    <div class="settingSidebar-body ps-container ps-theme-default">
+                        <div class=" fade show active">
+                            <div class="setting-panel-header">主题设置
+                            </div>
+                            <div class="p-15 border-bottom">
+                                <h6 class="font-medium m-b-10">选择样式</h6>
+                                <div class="selectgroup layout-color w-50">
+                                    <label class="selectgroup-item">
+                                        <input type="radio" name="value" value="1"
+                                            class="selectgroup-input-radio select-layout" checked>
+                                        <span class="selectgroup-button">白色</span>
+                                    </label>
+                                    <label class="selectgroup-item">
+                                        <input type="radio" name="value" value="2"
+                                            class="selectgroup-input-radio select-layout">
+                                        <span class="selectgroup-button">黑色</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="p-15 border-bottom">
+                                <h6 class="font-medium m-b-10">菜单栏颜色</h6>
+                                <div class="selectgroup selectgroup-pills sidebar-color">
+                                    <label class="selectgroup-item">
+                                        <input type="radio" name="icon-input" value="1"
+                                            class="selectgroup-input select-sidebar">
+                                        <span class="selectgroup-button selectgroup-button-icon" data-toggle="tooltip"
+                                            data-original-title="Light Sidebar"><i class="fas fa-sun"></i></span>
+                                    </label>
+                                    <label class="selectgroup-item">
+                                        <input type="radio" name="icon-input" value="2"
+                                            class="selectgroup-input select-sidebar" checked>
+                                        <span class="selectgroup-button selectgroup-button-icon" data-toggle="tooltip"
+                                            data-original-title="Dark Sidebar"><i class="fas fa-moon"></i></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="p-15 border-bottom">
+                                <h6 class="font-medium m-b-10">颜色主题</h6>
+                                <div class="theme-setting-options">
+                                    <ul class="choose-theme list-unstyled mb-0">
+                                        <li title="white" class="active">
+                                            <div class="white"></div>
+                                        </li>
+                                        <li title="cyan">
+                                            <div class="cyan"></div>
+                                        </li>
+                                        <li title="black">
+                                            <div class="black"></div>
+                                        </li>
+                                        <li title="purple">
+                                            <div class="purple"></div>
+                                        </li>
+                                        <li title="orange">
+                                            <div class="orange"></div>
+                                        </li>
+                                        <li title="green">
+                                            <div class="green"></div>
+                                        </li>
+                                        <li title="red">
+                                            <div class="red"></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="p-15 border-bottom">
+                                <div class="theme-setting-options">
+                                    <label class="m-b-0">
+                                        <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input"
+                                            id="mini_sidebar_setting">
+                                        <span class="custom-switch-indicator"></span>
+                                        <span class="control-label p-l-10">迷你菜单栏</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="p-15 border-bottom">
+                                <div class="theme-setting-options">
+                                    <label class="m-b-0">
+                                        <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input"
+                                            id="sticky_header_setting">
+                                        <span class="custom-switch-indicator"></span>
+                                        <span class="control-label p-l-10">固定顶部导航</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="mt-4 mb-4 p-3 align-center rt-sidebar-last-ele">
+                                <a href="#" class="btn btn-icon icon-left btn-primary btn-restore-theme">
+                                    <i class="fas fa-undo"></i> 恢复默认设置
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- settingSidebar end -->
+
+            </div>
+            <footer class="main-footer">
+                <div class="footer-left">
+                    Copyright &copy; 2019 <div class="bullet"></div> Design By <a
+                        href="http://www.bootstrapmb.com/">Redstar</a>
+                </div>
+                <div class="footer-right">
+                </div>
+            </footer>
+        </div>
+    </div>
+    <!-- General JS Scripts -->
+    <script src="assets/js/app.min.js"></script>
+    <!-- JS Libraies -->
+    <script src="assets/bundles/summernote/summernote-bs4.js"></script>
+    <!-- Page Specific JS File -->
+    <!-- Template JS File -->
+    <script src="assets/js/scripts.js"></script>
+    <!-- Custom JS File -->
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/page/profile.js"></script>
+
+</body>
+
+</html>

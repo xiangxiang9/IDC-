@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户登录 - IDC综合管理系统</title>
+    <link rel='shortcut icon' type='image/x-icon' href='assets/img/favicon.ico' />
+
+    <!-- General CSS Files -->
+    <link rel="stylesheet" href="assets/css/app.min.css">
+    <link rel="stylesheet" href="assets/bundles/bootstrap-social/bootstrap-social.css">
+    <link rel="stylesheet" href="assets/bundles/summernote/summernote-bs4.css">
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/login/components.css">
+    <!-- Custom style CSS -->
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <style>
+        body .flexbox-container  {
+            background: url(assets/img/login/auth-bg.jpg) no-repeat;
+        }
+    </style>
+</head>
+
+<body
+    class="horizontal-layout horizontal-menu navbar-sticky 1-column   footer-static bg-full-screen-image  blank-page blank-page"
+    data-open="hover" data-menu="horizontal-menu" data-col="1-column">
+    <!-- BEGIN: Content-->
+    <div class="app-content content">
+        <div class="content-overlay"></div>
+        <div class="content-wrapper">
+            <div class="content-header row">
+            </div>
+            <div class="content-body">
+                <!-- login page start -->
+                <section id="auth-login" class="row flexbox-container">
+                    <div class="col-xl-8 col-11">
+                        <div class="card bg-authentication mb-0">
+                            <div class="row m-0">
+                                <!-- left section-login -->
+                                <div class="col-md-6 col-12 px-0">
+                                    <div
+                                        class="card disable-rounded-right mb-0 p-2 h-100 d-flex justify-content-center">
+                                        <div class="card-header pb-1">
+                                            <div class="card-title" style="margin: 0 auto;">
+                                                <h2 class="text-center mb-2">欢迎访问IDC综合管理系统</h2>
+                                            </div>
+                                        </div>
+                                        <div class="card-content">
+                                            <div class="card-body">
+
+
+                                                <form action="index.html">
+
+                                                    <div class="form-group mb-50">
+                                                        <label class="text-bold-600" for="userName">用户名</label>
+                                                        <div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text">
+                                                                    <i class="fas fa-user"></i>
+                                                                </div>
+                                                            </div>
+                                                            <input type="text" class="form-control"
+                                                                placeholder="Username" name="userName" id="userName">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="text-bold-600" for="password">密码</label>
+                                                        <div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text">
+                                                                    <i class="fas fa-lock"></i>
+                                                                </div>
+                                                            </div>
+                                                            <input type="password" class="form-control"
+                                                                placeholder="Password" name="password">
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="form-group d-flex flex-md-row flex-column align-items-center pull-right">
+
+                                                        <div class="text-right"><a href="auth-forgot-password.html"
+                                                                class="card-link"><small>忘记密码?</small></a>
+                                                        </div>
+                                                    </div>
+                                                    <button type="submit"
+                                                        class="btn btn-primary glow w-100 position-relative">立即登录
+                                                        <i id="icon-arrow" class="bx bx-right-arrow-alt fas fa-arrow-right pull-right" style="line-height: 24px;"></i></button>
+                                                </form>
+                                                <hr>
+                                                <div class="text-center"><small class="mr-25">还没有账号？</small><a
+                                                        href="#"><small>请联系管理员申请账号</small></a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- right section image -->
+                                <div class="col-md-6 d-md-block d-none text-center align-self-center p-3">
+                                    <div class="card-content">
+                                        <img class="img-fluid" src="assets/img/login/login.png" alt="branding logo">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- login page ends -->
+
+            </div>
+        </div>
+    </div>
+    <!-- END: Content-->
+</body>
+
+</html>
